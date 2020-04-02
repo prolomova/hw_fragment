@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">habit_fragments</string>
+    <string name="about">Habit Tracker application</string>
+    <string name="mainViewLabel">Habits list</string>
+    <string name="addHabitLabel">Habit editor</string>
+    <string name="aboutLabel">About</string>
+    <string name="menuAbout">About</string>
+    <string name="homeLabel">Habits list</string>
+    <string name="habits_tracker_label">Habits Tracker</string>
+
+    <string name="description">description:</string>
+    <string name="type">type:</string>
+    <string name="priority">priority:</string>
+    <string name="period">period:</string>
+    <string name="quantity">quantity:</string>
+    <string name="title">Your habits</string>
+    <string name="habit_name">Habit name</string>
+    <string name="default_name">newHabit</string>
+    <string name="habit_description">Habit description</string>
+    <string name="description_title">description</string>
+    <string name="priority_title">Priority</string>
+    <string name="type_title">Type</string>
+    <string name="bad">bad</string>
+    <string name="good">good</string>
+    <string name="periodicity_title">Periodicity</string>
+    <string name="periodicity_question">How often do you do this?</string>
+    <string name="day_s">day(s)</string>
+    <string name="quantity_title">Quantity</string>
+    <string name="quantity_question">How many times?</string>
+    <string name="_1">1</string>
+    <string name="time_s">time(s)</string>
+    <string name="cancel">cancel</string>
+    <string name="add">add</string>
+</resources>
