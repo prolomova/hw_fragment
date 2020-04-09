@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
+        android:background="@drawable/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.add.AddNewItemFragment"
+            android:orientation="vertical" >
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                app:cardCornerRadius="18dp"
+                android:outlineSpotShadowColor="@android:color/black"
+                android:outlineAmbientShadowColor="@android:color/black"
+                android:layout_marginBottom="15dp"
+                android:elevation="15dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:background="@drawable/border_new"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/card1"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textColor="#4d3a5f"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/name"
+                        app:boxCornerRadiusBottomEnd="18dp"
+                        app:boxCornerRadiusBottomStart="18dp"
+                        app:boxCornerRadiusTopEnd="18dp"
+                        app:boxCornerRadiusTopStart="18dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00e0e7ff"
+                        android:hint="@string/habit_name"
+                        android:maxLines="1"
+                        android:text="New Habit"
+                        android:textColor="#521161"
+                        android:textSize="@dimen/text_size_big"
+                        android:textStyle="bold" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/card2"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/card1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textColor="#521161"
+                    android:textSize="@dimen/text_size_big"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#521161"
+                        android:background="#00e0e7ff"
+                        android:hint="@string/habit_description"
+                        android:inputType="textMultiLine"
+                        android:textSize="@dimen/text_size_normal" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                app:cardCornerRadius="18dp"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/group_priority"
+                android:layout_marginBottom="15dp"
+                android:elevation="15dp"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:background="@drawable/border_new"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp">
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/priority_title"
+                android:id="@+id/card3"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_big"
+                android:textColor="#521161"/>
+            <SeekBar
+                android:id="@+id/priority"
+                app:layout_constraintTop_toBottomOf="@+id/card3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:max="10"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                app:cardCornerRadius="18dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginHorizontal="10dp"
+                android:elevation="15dp"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:background="@drawable/border_new"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="@string/type_title"
+                android:id="@+id/card4"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_big"
+                android:textColor="#521161"/>
+            <RadioGroup
+                android:id="@+id/type"
+                app:layout_constraintTop_toBottomOf="@+id/card4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/typeBadBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bad"
+                    android:textStyle="bold"
+                    android:theme="@style/BadHabitButton"
+                    android:textColor="#521161"
+                    android:textSize="@dimen/text_size_normal"/>
+                <RadioButton
+                    android:id="@+id/typeGoodBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/good"
+                    android:textStyle="bold"
+                    android:theme="@style/GoodHabitButton"
+                    android:textColor="#521161"
+                    android:textSize="@dimen/text_size_normal"/>
+            </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                app:cardCornerRadius="18dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="15dp"
+                android:elevation="15dp"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:background="@drawable/border_new"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp">
+            <TextView
+                android:id="@+id/card5"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/periodicity_title"
+                android:textColor="#521161"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textSize="@dimen/text_size_big" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/text_periodicity"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/card5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="#521161">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/periodicity"
+                        android:layout_width="193dp"
+                        android:layout_height="match_parent"
+                        android:background="#00e0e7ff"
+                        android:hint="@string/periodicity_question"
+                        android:inputType="number"
+                        android:textColor="#521161"
+                        android:textSize="@dimen/text_size_normal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/day_s"
+                    android:textColor="#521161"
+                    android:textStyle="bold"
+                    android:id="@+id/card6"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/text_periodicity" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                app:cardCornerRadius="18dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="15dp"
+                android:elevation="15dp"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:background="@drawable/border_new"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quantity_title"
+                android:textStyle="bold"
+                android:id="@+id/quantity_box"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textSize="@dimen/text_size_big"
+                android:textColor="#521161"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="#4d3a5f"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/quantity_box">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/quantity"
+                        android:layout_width="192dp"
+                        android:layout_height="match_parent"
+                        android:background="#00e0e7ff"
+                        android:hint="@string/quantity_question"
+                        android:inputType="number"
+                        android:textSize="@dimen/text_size_normal" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/time_s"
+                    android:textColor="#521161"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/text_quantity" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:elevation="15dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:background="@drawable/border_new"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Select color"
+                    android:layout_marginRight="16dp"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_big"
+                    android:textColor="#521161">
+                </TextView>
+                <ImageView
+                    android:id="@+id/iv_selected_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="#FFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_name_subject"
+                    app:srcCompat="@drawable/ic_circle" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="15dp"
+                android:elevation="15dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    app:cornerRadius="18dp"
+                    android:text="@string/cancel"
+                    android:background="@drawable/border"
+                    android:layout_marginRight="8dp" />
+                <Button
+                    android:id="@+id/add"
+                    app:cornerRadius="18dp"
+                    android:background="@drawable/border"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

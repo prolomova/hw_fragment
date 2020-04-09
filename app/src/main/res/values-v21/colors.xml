@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5523E3</color>
+    <color name="colorPrimaryDark">#441cb5</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="purpleBtn">#5523E3</color>
+    <color name="purpleBtnOn">#5523E3</color>
+    <color name="purpleBtnOff">#825dea</color>
+    <color name="zeroAlpha">#00000000</color>
+
+    <array name="colors">
+        <item>#FFFFCC</item>
+        <item>#FFCC66</item>
+        <item>#FF9966</item>
+        <item>#FF6633</item>
+        <item>#FF6699</item>
+        <item>#FF66CC</item>
+        <item>#CC66CC</item>
+        <item>#9933CC</item>
+        <item>#9966FF</item>
+        <item>#9999FF</item>
+        <item>#6699FF</item>
+        <item>#99CCFF</item>
+        <item>#66CCFF</item>
+        <item>#CCFFFF</item>
+        <item>#99FFCC</item>
+        <item>#66CC99</item>
+        <item>#99FF66</item>
+        <item>#CCFF66</item>
+    </array>
+</resources>
+
