@@ -1,4 +1,4 @@
-package com.example.hw_fragment.internal
+package com.example.hw_fragment.internal.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

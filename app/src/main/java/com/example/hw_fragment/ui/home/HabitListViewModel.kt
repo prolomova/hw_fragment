@@ -1,7 +1,7 @@
 package com.example.hw_fragment.ui.home
 
 import androidx.lifecycle.*
-import com.example.hw_fragment.internal.HabitEntity
+import com.example.hw_fragment.internal.db.HabitEntity
 import com.example.hw_fragment.internal.HabitApplication
 import java.util.*
 import com.example.hw_fragment.internal.SortOrder
@@ -30,7 +30,7 @@ class HabitListViewModel : ViewModel() {
                         updatedSubstring in it.name.toLowerCase(Locale.getDefault())
                 }?.sortedByDescending { it.date }
             }
-            
+
         }
     }
 

@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hw_fragment.R
-import com.example.hw_fragment.internal.HabitEntity
+import com.example.hw_fragment.internal.db.HabitEntity
 import com.example.hw_fragment.internal.HabitType
 
 

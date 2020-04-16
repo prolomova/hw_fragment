@@ -1,7 +1,7 @@
-package com.example.hw_fragment.internal
+package com.example.hw_fragment.internal.db
 
-import android.content.res.ColorStateList
 import androidx.room.*
+import com.example.hw_fragment.internal.HabitType
 import java.util.*
 
 

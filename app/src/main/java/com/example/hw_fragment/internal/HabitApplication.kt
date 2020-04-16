@@ -2,6 +2,7 @@ package com.example.hw_fragment.internal
 
 import android.app.Application
 import androidx.room.Room
+import com.example.hw_fragment.internal.db.Database
 
 
 class HabitApplication : Application() {

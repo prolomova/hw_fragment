@@ -3,7 +3,7 @@ package com.example.hw_fragment.ui.add
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.hw_fragment.internal.HabitEntity
+import com.example.hw_fragment.internal.db.HabitEntity
 import com.example.hw_fragment.internal.HabitApplication
 
 

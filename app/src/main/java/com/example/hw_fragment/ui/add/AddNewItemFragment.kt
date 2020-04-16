@@ -17,7 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.hw_fragment.internal.HabitType
 import com.example.hw_fragment.R
-import com.example.hw_fragment.internal.HabitEntity
+import com.example.hw_fragment.internal.db.HabitEntity
 //import com.example.hw_fragment.databinding.AddNewItemFragmentBinding
 import dev.sasikanth.colorsheet.ColorSheet
 import kotlinx.android.synthetic.main.add_new_item_fragment.*
