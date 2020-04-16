@@ -1,24 +1,27 @@
 package com.example.hw_fragment.ui.home
 
 import androidx.lifecycle.*
-import com.example.hw_fragment.internal.Habit
-import com.example.hw_fragment.internal.Storage
+import com.example.hw_fragment.internal.HabitEntity
+import com.example.hw_fragment.internal.HabitApplication
 import java.util.*
 
 
 class HabitListViewModel : ViewModel() {
+    private val allHabits: LiveData<List<HabitEntity>> = HabitApplication.database.habitDao().getAll()
     val nameSubstring: MutableLiveData<String> = MutableLiveData()
 
-    val habits: MediatorLiveData<List<Habit>> = MediatorLiveData()
+
+    val habits: MediatorLiveData<List<HabitEntity>> = MediatorLiveData()
 
     init {
-        habits.addSource(Storage.habits) { newHabits ->
-            habits.value = newHabits.values.toList()
+        habits.addSource(allHabits) { newHabits ->
+
+            habits.value = newHabits.toList()
         }
         habits.addSource(nameSubstring) { updatedSubstring ->
-            habits.value = Storage.habits.value?.values?.filter { updatedSubstring.isNullOrBlank() ||
+            habits.value = allHabits.value?.filter { updatedSubstring.isNullOrBlank() ||
                         updatedSubstring in it.name.toLowerCase(Locale.getDefault())
-            }
+            } ?: listOf()
         }
     }
 
@@ -28,5 +31,9 @@ class HabitListViewModel : ViewModel() {
 
     fun sortDateDescending() {
         habits.value = habits.value?.sortedByDescending { it.date }
+    }
+
+    fun updateNameFilter(newString: String) {
+        nameSubstring.value = newString.toLowerCase(Locale.getDefault())
     }
 }

@@ -1,27 +1,23 @@
 package com.example.hw_fragment.ui.add
 
+import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.hw_fragment.internal.Habit
-import com.example.hw_fragment.internal.Storage
+import com.example.hw_fragment.internal.HabitEntity
+import com.example.hw_fragment.internal.HabitApplication
 
 
 class AddNewItemViewModel(private val habitIndex: Int?) : ViewModel() {
-    fun save(habit: Habit) {
-        if (habit.id != null)
-            Storage.modify(habit)
-        else
-            Storage.add(habit)
-    }
+    val habit: LiveData<HabitEntity?> = HabitApplication.database.habitDao().getById(habitIndex)
 
-    private val mutableHabit: MutableLiveData<Habit?> = MutableLiveData()
-    val habit: LiveData<Habit?> = mutableHabit
-
-    init {
-        if (habitIndex != null) {
-            Storage.get(habitIndex).let { habit: Habit? -> mutableHabit.postValue(habit)
-            }
+    fun save(habit: HabitEntity) {
+        val habitDao = HabitApplication.database.habitDao()
+        Log.d("save habit", habitIndex.toString())
+        if (habitIndex == null) {
+            habitDao.insert(habit) }
+        else {
+            habit.id = habitIndex
+            habitDao.update(habit)
         }
     }
 }

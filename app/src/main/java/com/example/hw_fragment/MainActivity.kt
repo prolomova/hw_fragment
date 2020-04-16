@@ -2,15 +2,10 @@ package com.example.hw_fragment.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcelable
-import android.util.Log
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.hw_fragment.R
-import com.example.hw_fragment.internal.Habit
-import com.example.hw_fragment.internal.Storage
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
 

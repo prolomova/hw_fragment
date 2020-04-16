@@ -3,6 +3,7 @@
     package="com.example.hw_fragment">
 
     <application
+        android:name=".internal.HabitApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

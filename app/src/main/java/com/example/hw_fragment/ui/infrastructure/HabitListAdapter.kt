@@ -1,24 +1,20 @@
 package com.example.hw_fragment.ui.infrastructure
 
 import android.content.res.ColorStateList
-import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.Constraints
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hw_fragment.R
-import com.example.hw_fragment.internal.Habit
+import com.example.hw_fragment.internal.HabitEntity
 import com.example.hw_fragment.internal.HabitType
 
 
-class HabitListAdapter(val habits: List<Habit>)
+class HabitListAdapter(var habits: List<HabitEntity>)
     : RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,6 +25,10 @@ class HabitListAdapter(val habits: List<Habit>)
                 false
             )
         )
+    }
+
+    fun updateHabits(newHabits: List<HabitEntity>){
+        habits = newHabits
     }
 
     override fun getItemCount(): Int {
@@ -46,7 +46,7 @@ class HabitListAdapter(val habits: List<Habit>)
         habitPeriod.text = habits[position].periodicity.toString()
         habitQuantity.text = habits[position].quantity.toString()
         habitPriority.numStars = habits[position].priority
-        habitColor.imageTintList = habits[position].color
+        habitColor.imageTintList = ColorStateList.valueOf(habits[position].color)
 
         when (habits[position].type) {
             HabitType.BAD -> holder.listItemView.setBackgroundResource(R.drawable.oval_bad)

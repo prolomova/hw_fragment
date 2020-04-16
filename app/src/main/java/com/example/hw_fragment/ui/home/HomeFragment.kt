@@ -11,6 +11,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.example.hw_fragment.R
+import com.example.hw_fragment.ui.add.AddNewItemFragment
 import com.example.hw_fragment.ui.infrastructure.HomeAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.bottom_sheet.*
@@ -42,10 +43,8 @@ class HomeFragment : Fragment() {
             }
         }.attach()
 
-
-
         nameSubstr.addTextChangedListener {
-            viewModel.nameSubstring.value = it.toString().toLowerCase(Locale.getDefault())
+            viewModel.updateNameFilter(it.toString())
         }
 
         sort.setOnClickListener {
